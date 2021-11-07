@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  script:
+    build: https://github.com/solidistic/devops-3-2.git
+    container_name: git-repo
+    image: solidistic/devops-3-2
+    environment:
+      - WATCHTOWER_LABEL_ENABLE=true
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/jannemulari/.docker/config.json:/config.json
+    container_name: watchtower
