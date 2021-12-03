@@ -13,5 +13,5 @@ services:
       - WATCHTOWER_POLL_INTERVAL=60
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/jannemulari/.docker/config.json:/config.json
+      - /Users/jannemulari/.docker/config.json:/config.json
     container_name: watchtower
